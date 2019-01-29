@@ -7,7 +7,7 @@
             <v-btn color="info"  v-on:click="setSeletedItem('03')">setItem</v-btn>
             <div>
                 <select v-model="selected" @change="optionChange">
-                    <option v-for="data in datas" v-bind:value="data.code">
+                    <option v-for="data in datas" v-bind:value="data.code" v-bind:key="data.code">
                         {{ data.name }}
                     </option>
                 </select>
@@ -18,7 +18,7 @@
             <v-card-title class="headline font-weight-regular blue-grey white--text">ddori select box</v-card-title>
             <v-btn color="info"  v-on:click="ddoriGetSelectedData">getItem</v-btn>
             <div>
-                <d-select-box ref="testId" :datas="datas" :selectedValue="selected"></d-select-box>
+                <d-select-box ref="cboBranch" :datas="datas" :selected-key="selected" :event-id="eventId" @changedBranch="changeBranch"></d-select-box>
             </div>
         </v-card>
         
@@ -29,7 +29,7 @@
 <script>
 
 import DSelectBox from '../components/DSelectBox.vue';
-
+// https://medium.com/@Dongmin_Jang/vuejs-%EC%88%A8%EA%B2%A8%EC%A7%84-vue-%ED%8C%A8%ED%84%B4%EB%93%A4-1ea3adc585ac
 export default {
     
     components:{
@@ -40,6 +40,7 @@ export default {
             datas:[{code:'01',name:'Test01'},{code:'02',name:'Test02'},{code:'03',name:'Test03'}
             ]
             ,selected:'02'
+            ,eventId:'changedBranch'
         }   
     }
     ,methods:{
@@ -55,7 +56,7 @@ export default {
         }
         ,ddoriGetSelectedData(){
         
-            let findItem = this.$refs.testId.getSelectedData();
+            let findItem = this.$refs.cboBranch.getSelectedData();
             alert(findItem.name);
             //return findItem;
         }
@@ -65,6 +66,9 @@ export default {
         }
         ,optionChange(){
             alert("chabged");
+        }
+        ,changeBranch(){
+            alert(this.$refs.cboBranch.getSelectedData().code);
         }
     },
 }

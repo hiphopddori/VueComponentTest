@@ -23,7 +23,17 @@ export default {
                 },
                 {
                     title: 'Artist',
-                    name: 'artist'
+                    name: 'artist',
+                    formatter: function(value, rowData) {
+                        let backgroudColor = "";
+                        
+                        if (rowData.score == "5"){
+                            backgroudColor = "red";
+                        }else{
+                            backgroudColor = "green";    
+                        }
+                        return '<div style="width:100%;height:100%;background-color:'+backgroudColor+'">'+rowData.artist+'</div>';
+                    }
                 },
                 {
                     title: 'Personal Score',
