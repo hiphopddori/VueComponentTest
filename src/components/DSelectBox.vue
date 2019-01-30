@@ -6,7 +6,6 @@
                 </option>
         </select>
     </div>
-
 </template>
 
 <script>
@@ -17,7 +16,7 @@ export default {
     props:{
          datas:Array
         ,selectedKey:String
-        ,eventId:String
+        //,eventId:String
     },
     data(){
         return{
@@ -36,9 +35,9 @@ export default {
         ,optionChange(){
             //alert(this.eventId);
             
-            if (this.eventId != ""){
-                this.$emit(this.eventId);         
-            }
+            //if (this.eventId != ""){
+            this.$emit("onChange");         
+            //}
             
         }
     }

@@ -18,12 +18,10 @@
             <v-card-title class="headline font-weight-regular blue-grey white--text">ddori select box</v-card-title>
             <v-btn color="info"  v-on:click="ddoriGetSelectedData">getItem</v-btn>
             <div>
-                <d-select-box ref="cboBranch" :datas="datas" :selected-key="selected" :event-id="eventId" @changedBranch="changeBranch"></d-select-box>
+                <d-select-box ref="cboBranch" :datas="datas" :selected-key="selected" :event-id="eventId" @onChange="changeBranch"></d-select-box>
             </div>
-        </v-card>
-        
+        </v-card>        
     </div>
-
 </template>
 
 <script>
@@ -40,7 +38,7 @@ export default {
             datas:[{code:'01',name:'Test01'},{code:'02',name:'Test02'},{code:'03',name:'Test03'}
             ]
             ,selected:'02'
-            ,eventId:'changedBranch'
+            //,eventId:'changedBranch'
         }   
     }
     ,methods:{
