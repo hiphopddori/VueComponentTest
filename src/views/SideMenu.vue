@@ -61,8 +61,9 @@ export default {
             drawer: true,
             items: [
                 { title: '종합감시', icon: 'dashboard' , path:'/monitor' },
-                { title: 'Tui Data Grid', icon: 'question_answer', path:'/tuigrid'  },
+                { title: 'Data Grid', icon: 'question_answer', path:'/datagrid'  },
                 { title: 'Select Box', icon: 'question_answer', path:'/selectbox'  },
+                { title: 'Tab', icon: 'question_answer', path:'/tab'  },
                 { title: 'About', icon: 'question_answer', path:'/'  }
             ],
             mini: true,

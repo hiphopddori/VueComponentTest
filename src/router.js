@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
-import TuiDataGrid from './views/TuiDataGrid.vue'
-import MonitorTotal from './views/MonitorTotal.vue';
+//import TuiDataGrid from './views/TuiDataGrid.vue'
+//import MonitorTotal from './views/MonitorTotal.vue';
 
 Vue.use(Router)
 
@@ -32,8 +32,8 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/MonitorTotal.vue')
     },
     {
-      path: '/tuigrid',
-      name: 'Tui Data Grid',
+      path: '/datagrid',
+      name: 'Data Grid',
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
@@ -46,6 +46,14 @@ export default new Router({
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/SelectBoxGuide.vue')
+    },
+    {
+      path: '/tab',
+      name: 'tab',
+      // route level code-splitting
+      // this generates a separate chunk (about.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import(/* webpackChunkName: "about" */ './views/TabsGuide.vue')
     }
   ]
 })

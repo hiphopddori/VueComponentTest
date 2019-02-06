@@ -26,8 +26,7 @@
 
 <script>
 
-import DSelectBox from '../components/DSelectBox.vue';
-// https://medium.com/@Dongmin_Jang/vuejs-%EC%88%A8%EA%B2%A8%EC%A7%84-vue-%ED%8C%A8%ED%84%B4%EB%93%A4-1ea3adc585ac
+import DSelectBox from '../components/core/DSelectBox.vue';
 export default {
     
     components:{
