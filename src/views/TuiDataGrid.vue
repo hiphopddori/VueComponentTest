@@ -5,7 +5,7 @@
             color="cyan"
             dark
             slider-color="yellow"
-        >
+            >
             <v-tab ripple>
                 Tui Grid
             </v-tab>
@@ -37,11 +37,11 @@
                     >
                     <template slot="items" slot-scope="props">
                         <td>
-                        <v-checkbox
-                            v-model="props.selected"
-                            primary
-                            hide-details
-                        ></v-checkbox>
+                            <v-checkbox
+                                v-model="props.selected"
+                                primary
+                                hide-details
+                            ></v-checkbox>
                         </td>
                         <td>{{ props.item.name }}</td>
                         <td class="text-xs-right" v-bind:class="classObject(props.item)" >{{ props.item.calories }}</td>
@@ -53,11 +53,11 @@
                 </v-data-table>
                 
             </v-tab-item>  
-
+            
 
          </v-tabs>
 
-        
+
     </div>    
         
     

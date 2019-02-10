@@ -4,6 +4,7 @@
       dark
       floating
       persistent
+      :mini-variant.sync="mini"
       width="220"
     >
       
@@ -64,6 +65,7 @@ export default {
                 { title: 'Data Grid', icon: 'question_answer', path:'/datagrid'  },
                 { title: 'Select Box', icon: 'question_answer', path:'/selectbox'  },
                 { title: 'Tab', icon: 'question_answer', path:'/tab'  },
+                { title: 'Firebase', icon: 'question_answer', path:'/firebase'  },
                 { title: 'About', icon: 'question_answer', path:'/'  }
             ],
             mini: true,

@@ -34,26 +34,22 @@ export default new Router({
     {
       path: '/datagrid',
       name: 'Data Grid',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/TuiDataGrid.vue')
     },
     {
       path: '/selectbox',
       name: 'Select Box',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/SelectBoxGuide.vue')
     },
     {
       path: '/tab',
       name: 'tab',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "about" */ './views/TabsGuide.vue')
+    },
+    {
+      path: '/firebase',
+      name: 'FireBase',
+      component: () => import(/* webpackChunkName: "about" */ './views/FirebaseGuide.vue')
     }
   ]
 })

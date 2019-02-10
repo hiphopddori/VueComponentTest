@@ -14,7 +14,7 @@
       </v-flex>
 
       <v-flex mb-4>
-        <h1 v-on:click="getMeetDay">fb test</h1>
+        <h1 v-on:click="getDataFirebase">fb test</h1>
     <table>
       <tbody>
           <tr v-for="user in users" :key="user.name">
@@ -104,7 +104,7 @@
       users: fb.ref('users')
     },
     methods:{
-        getMeetDay(){
+        getDataFirebase(){
            //alert(this.$firebaseRefs.users.child("1").name);
            alert(this.users[0].name);
         }
