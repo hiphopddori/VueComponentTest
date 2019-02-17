@@ -11,7 +11,9 @@
         <v-list class="pa-0">
           <v-list-tile avatar>
             <v-list-tile-avatar>
-              <img src="https://randomuser.me/api/portraits/men/85.jpg">
+               <v-icon>fa-user</v-icon>
+               <!-- <img src="https://randomuser.me/api/portraits/men/85.jpg"> -->
+
             </v-list-tile-avatar>
   
             <v-list-tile-content>
@@ -61,11 +63,12 @@ export default {
         return{
             drawer: true,
             items: [
-                { title: '종합감시', icon: 'dashboard' , path:'/monitor' },
-                { title: 'Data Grid', icon: 'question_answer', path:'/datagrid'  },
-                { title: 'Select Box', icon: 'question_answer', path:'/selectbox'  },
+                { title: '종합감시', icon: 'fa-desktop' , path:'/monitor' },
+                { title: 'Data Grid', icon: 'fa-table', path:'/datagrid'  },
+                { title: 'Select Box', icon: 'fa-caret-square-down', path:'/selectbox'  },
                 { title: 'Tab', icon: 'question_answer', path:'/tab'  },
-                { title: 'Firebase', icon: 'question_answer', path:'/firebase'  },
+                { title: 'Firebase', icon: 'fa-database', path:'/firebase'  },
+                { title: 'Modal', icon: 'fa-window-restore', path:'/modal'  },
                 { title: 'About', icon: 'question_answer', path:'/'  }
             ],
             mini: true,

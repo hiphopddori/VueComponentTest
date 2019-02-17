@@ -1,11 +1,22 @@
 <template>
 
     <div>
+        <!--
+        <v-layout row wrap>
+            <v-flex xs12 sm1>
+                    <v-text-field label="input index" type="number" v-model="selIndex"></v-text-field>
+            </v-flex>
+            <v-flex xs12 sm1 md4>
+                    <v-btn color="info"  @click='getData()'>Get Data</v-btn>
+            </v-flex>
+        </v-layout>
+        -->
         <v-card>
-            <div>
-            <v-text-field label="input index" type="number" v-model="selIndex"></v-text-field>
+            <span class="black--text pl-1">
+               input index :
+            </span>
+            <input type="number" placeholder="input index" style="width:60px"  v-model="selIndex"/>
             <v-btn color="info"  @click='getData()'>Get Data</v-btn>
-            </div>
         </v-card>
         <v-data-table
                 v-model="selected"

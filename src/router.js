@@ -50,6 +50,11 @@ export default new Router({
       path: '/firebase',
       name: 'FireBase',
       component: () => import(/* webpackChunkName: "about" */ './views/FirebaseGuide.vue')
+    },
+    {
+      path: '/modal',
+      name: 'Modal',
+      component: () => import(/* webpackChunkName: "about" */ './views/ModalGuide.vue')
     }
   ]
 })

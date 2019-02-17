@@ -5,12 +5,12 @@
             <v-toolbar-title> <span>{{chartData.title}}</span></v-toolbar-title>
             <v-spacer></v-spacer>
             
-            <v-btn icon>
-                <v-icon>minimize</v-icon>
+            <v-btn icon style="width:15px;">
+                <v-icon>fa-window-restore</v-icon>
             </v-btn>
             
-            <v-btn icon>
-                <v-icon>maximize</v-icon>
+            <v-btn icon style="width:15px;">
+                <v-icon>fa-window-maximize</v-icon>
             </v-btn>
 
         </v-toolbar>

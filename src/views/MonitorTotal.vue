@@ -1,12 +1,16 @@
 <template>
-    <v-container grid-list-md >
-        <v-layout row wrap>
-            <v-flex xs3 v-for="chartData in chartDatas" :key="chartData.id">
-                <bar-chart-pannel :chart-data="chartData"/>
-            </v-flex>
-        </v-layout>
-    </v-container>
-
+    <div>
+        <v-card>
+            <v-btn color="info"  @click='chartMaxize()'>Maximize</v-btn>
+        </v-card> 
+        <v-container grid-list-md align-start="true" justify-start="true" ml-1>
+            <v-layout row wrap>
+                <v-flex xs3 v-for="chartData in chartDatas" :key="chartData.id">
+                    <bar-chart-pannel :chart-data="chartData"/>
+                </v-flex>
+            </v-layout>
+        </v-container>
+    </div>
 </template>
 
 <script>
@@ -14,6 +18,11 @@
 import BarChartPannel from "../components/charts/BarChartPannel"
 export default {
     components: { BarChartPannel }
+    ,methods:{
+        chartMaxize(){
+
+        }
+    }
     ,data:function(){
         return{
             chartDatas:[

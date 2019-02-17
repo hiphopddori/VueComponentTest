@@ -1,8 +1,10 @@
 
 <script>
-import { Bar } from 'vue-chartjs'
+// https://www.npmjs.com/package/vue-chartjs
+
+import { Bar,Line } from 'vue-chartjs'
 export default {
-    extends: Bar
+    extends: "Bar"
     ,props: ['data']
     ,mounted () {
     // Overwriting base render method with actual data.

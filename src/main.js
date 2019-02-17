@@ -4,10 +4,13 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import Vuefire from 'vuefire'
-//Vue.use(Vuetify)
+import VModal from 'vue-js-modal'
 
+//Vue.use(Vuetify)
+import '@fortawesome/fontawesome-free/css/all.css'
 
 Vue.use(Vuefire);
+Vue.use(VModal,{dynamic:true});
 Vue.config.productionTip = false
 Vue.config.devtools = true
 
