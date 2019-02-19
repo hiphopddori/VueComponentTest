@@ -1,6 +1,7 @@
 <template>
     <div>
         <v-btn color="info"  v-on:click="popModal">custom modal</v-btn>
+        <v-btn color="info"  v-on:click="changeMsg">changeMsg</v-btn>
         <modals-container />
 
     </div>
@@ -13,13 +14,13 @@ import popupModal1 from './popup/popupModal1.vue';
 export default {
     data(){
         return{
-
+            dialogMsg:'다이얼로그 메세지'
         }
     }
     ,methods:{
         popModal(){
             this.$modal.show(popupModal1,{
-                    msg : '다이얼로그 메세지',
+                    msg : this.dialogMsg,
                     dialogTitle:'커스텀 다이얼로그',
                     modal : this.$modal,
                     userEvent :this.userEvent
@@ -34,6 +35,15 @@ export default {
         }
         ,userEvent(){
             alert('userEvent');
+        }
+        ,changeMsg(){
+            //this.dialogMsg = "변경 다이얼로그 메세지";
+            const baseURI = '/test';
+            this.$http.get(baseURI)
+            .then((result) => {
+                console.log(result)
+                this.posts = result.data
+            })
         }
     }
     ,mounted(){
