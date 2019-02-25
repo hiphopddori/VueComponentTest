@@ -1,31 +1,42 @@
 <template>
     <div>
-        <v-card>
-            <v-btn color="info"  @click='chartMaxize()'>Maximize</v-btn>
-        </v-card> 
+        <d-mdi-window-panel-container>
+            <d-mdi-window-panel v-for="chartData in chartDatas" :key="chartData.id">                            
+                <basic-bar-chart :data="chartData" class="chart-container">
+                </basic-bar-chart>                
+            </d-mdi-window-panel>   
+        </d-mdi-window-panel-container>
+        <!--
         <v-container grid-list-md align-start="true" justify-start="true" ml-1>
             <v-layout row wrap>
                 <v-flex xs3 v-for="chartData in chartDatas" :key="chartData.id">
                     <bar-chart-pannel :chart-data="chartData"/>
                 </v-flex>
             </v-layout>
+
         </v-container>
+        -->
     </div>
 </template>
 
 <script>
 
-import BarChartPannel from "../components/charts/BarChartPannel"
-export default {
-    components: { BarChartPannel }
-    ,methods:{
-        chartMaxize(){
+// import BarChartPannel from "../components/charts/BarChartPannel"
+import BasicBarChart from "../components/charts/BasicBarChart"
+import DMdiWindowPanelContainer from "../components/core/DMdiWindowPanelContainer"
+import DMdiWindowPanel from "../components/core/DMdiWindowPanel"
 
-        }
+export default {
+    components: {DMdiWindowPanelContainer,DMdiWindowPanel,BasicBarChart }
+    ,methods:{
+        
     }
     ,data:function(){
         return{
-            chartDatas:[
+            testDatas:[
+                {title:'panel1'},{title:'panel2'}        
+            ]
+            ,chartDatas:[
             {
                 id:'1' ,
                 title:'읍/면/동',
@@ -55,3 +66,12 @@ export default {
     }
 }
 </script>
+
+
+<style>
+  .chart-container{
+        position:relative;
+        height: 100%;
+        width: 100%
+    }
+</style>

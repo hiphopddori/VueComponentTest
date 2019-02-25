@@ -1,4 +1,5 @@
 <template>
+    <!--
     <v-card>
         <v-toolbar color="blue" dark dense height="25">
 
@@ -18,11 +19,15 @@
         <basic-bar-chart :data="chartData">
         </basic-bar-chart>
     </v-card>
+    -->
+
+    <div class="box"  v-bind:class="{black: isBlack}" v-bind:style="{height: heightSize + 'vh', width: heightSize + 'vw'}">
+        <button class="lower" v-on:click="lowerHeight"><i class="fa-window-minimize"></i></button>
+        <button class="raise" v-on:click="raiseHeight"><i class="fa-window-maximize"></i></button>
+        <basic-bar-chart :data="chartData">
+        </basic-bar-chart>
+    </div>
 </template>
-
-<style>
-
-</style>
 
 
 <script>
@@ -32,11 +37,14 @@ export default {
      components: { BasicBarChart }
      ,props: {
             'chartData':Object
+     },
+     data(){
+         
      }
+     
 }
 </script>
 
 <style>
-
 
 </style>
