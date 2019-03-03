@@ -1,6 +1,6 @@
 <template>
     <div>
-        <d-mdi-window-panel-container>
+        <d-mdi-window-panel-container :mode="'V'">
             <d-mdi-window-panel v-for="chartData in chartDatas" :key="chartData.id">                            
                 <basic-bar-chart :data="chartData" class="chart-container">
                 </basic-bar-chart>                
@@ -13,7 +13,6 @@
                     <bar-chart-pannel :chart-data="chartData"/>
                 </v-flex>
             </v-layout>
-
         </v-container>
         -->
     </div>
@@ -36,6 +35,7 @@ export default {
             testDatas:[
                 {title:'panel1'},{title:'panel2'}        
             ]
+            ,mode:'V'
             ,chartDatas:[
             {
                 id:'1' ,
@@ -66,7 +66,6 @@ export default {
     }
 }
 </script>
-
 
 <style>
   .chart-container{

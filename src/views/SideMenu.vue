@@ -69,6 +69,7 @@ export default {
                 { title: 'Tab', icon: 'question_answer', path:'/tab'  },
                 { title: 'Firebase', icon: 'fa-database', path:'/firebase'  },
                 { title: 'Modal', icon: 'fa-window-restore', path:'/modal'  },
+                { title: 'Kakao Map', icon: 'fa-map-marker-alt', path:'/map'  },
                 { title: 'About', icon: 'question_answer', path:'/'  }
             ],
             mini: true,

@@ -55,6 +55,11 @@ export default new Router({
       path: '/modal',
       name: 'Modal',
       component: () => import(/* webpackChunkName: "about" */ './views/ModalGuide.vue')
+    },
+    {
+      path: '/map',
+      name: 'Kakao Map',
+      component: () => import('./views/KakaoMapGuide.vue')
     }
   ]
 })

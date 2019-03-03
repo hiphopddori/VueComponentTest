@@ -1,10 +1,9 @@
 <template>
-     <div class="box" v-bind:style="{height: heightSize + 'vh', width:'91vw',display:display}">
-        <button class="lower" v-on:click="lowerHeight"><v-icon>fa-window-minimize</v-icon> </button>
-        <button class="raise" v-on:click="raiseHeight"><v-icon>fa-window-maximize</v-icon></button>
+     <div class="box" v-bind:style="{top:top+'vh',left:left+'vw',height:heightSize+'vh',width:widthSize+'vw',display:display}">
+        <button class="lower" v-show="isRestore" v-on:click="restored"><v-icon>fa-window-restore</v-icon> </button>
+        <button class="raise" v-show="isMaximize" v-on:click="maximized"><v-icon>fa-window-maximize</v-icon></button>
         <slot></slot>
     </div>
-
 </template>
 
 <script>
@@ -13,22 +12,34 @@ export default {
     
     ,data(){
          return{
-            heightSize: 0
+            title:''
+            ,heightSize: 0
+            ,widthSize:0
+            ,top:0
+            ,left:0
             ,display:''
+            ,isRestore:false
+            ,isMaximize:true
          }
      }
      ,mounted(){
           //this.$children[2].height = this.heightSize + 'vh';
      }
      ,methods: {
-        lowerHeight(){
+        restored(){
+            //test
+            this.$slots.default.forEach(vNode => {
+                // alert(vNode.componentInstance.$data);
+            });
             this.$parent.sort();
-            //this.$children[2].height = this.heightSize + 'vh';
         },
-        raiseHeight(){
+        maximized(){
             this.$parent.allHidden();
-            this.display = '';
             this.heightSize =80;
+            this.isMaximize = false;
+            this.isRestore = true;
+            this.display = '';
+            
             //this.$children[2].height = '80vh';
         },
         reDraw(){
@@ -45,7 +56,7 @@ i {
   color: yellow;
 }
 .box {
-  position: relative;
+  position: absolute;
   border: 1px solid #000;
   margin: 20px;
   transition: 0.3s;
@@ -68,20 +79,8 @@ i {
     outline:none;
   }
   .box .lower {
-    right: 40px;
+    right: 10px;
   }
-  .box .light {
-    position:absolute;
-    top:10px;
-    left:20px;
-    padding: 3px 8px;
-    background:none;
-    border: none;
-    outline: none;
-    transition: 0.3s;
-    cursor: pointer;
-  }
-
 
 .black {
   background-color: #000;
