@@ -21,3 +21,8 @@ new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+
+
+function eventTest(){
+  alert('11');
+}   
