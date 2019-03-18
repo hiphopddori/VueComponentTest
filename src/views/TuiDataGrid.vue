@@ -79,6 +79,23 @@ export default {
     computed: {
         
     },
+    mounted() {
+        
+        
+        this.$http.get('/user/users',{
+                    params: {
+                    user_id: 'sunsee78'
+                    }
+            }).then(function (response) {
+                console.log(response.data.result.toString());
+                alert('성공');
+            })
+            .catch(function (error) {
+                console.log(error);
+                alert('실패');
+            });
+    
+    },
     methods:{
         classObject : function(item) {
             

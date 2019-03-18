@@ -2,13 +2,12 @@
 
 module.exports = {
   devServer: {
-    port:8081,
     proxy: { // proxyTable 설정
-      '/test': {
-        target: 'https://jsonplaceholder.typicode.com',
+      '/user': {
+        target: 'http://localhost:8080',
         changeOrigin: true,
         pathRewrite: {
-           '^/test': '/users'
+           // '^/test': '/users'
         }
       }
     }

@@ -9,11 +9,6 @@
 
 import loadScriptOnce from 'load-script-once';
 
- function eventTest(){
-    alert('11');
- }   
-
-
 export default {
     data(){
         return{
@@ -44,7 +39,8 @@ export default {
         });
     }
     ,methods:{
-        eventTest(){
+        eventTest(e){
+            debugger;
             alert('Test 입니다.');
         }
         ,drawMaker(){
@@ -63,7 +59,8 @@ export default {
             //     alert('Test 입니다.');
             // }
             
-            var content = '<div id="divTest" class="label" onClick="eventTest();"><span class="left"></span><span class="center">카카오!</span><span class="right"></span></div>';
+            var content = '<div id="divTest" class="label""><span class="left"></span><span class="center">카카오!</span><span class="right"></span></div>';
+            //var content = '<div id="divTest" class="label" onClick="alert(this.parent.eventTest();"><span class="left"></span><span class="center">카카오!</span><span class="right"></span></div>';
             // 커스텀 오버레이가 표시될 위치입니다 
             var position = new daum.maps.LatLng(33.450601, 126.570667);  
 
