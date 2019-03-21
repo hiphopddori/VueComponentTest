@@ -10,6 +10,14 @@ module.exports = {
            // '^/test': '/users'
         }
       }
+      ,
+      '/org': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        pathRewrite: {
+           // '^/test': '/users'
+        }
+      }
     }
   }
 }

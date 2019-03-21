@@ -11,6 +11,7 @@
                         {{ data.name }}
                     </option>
                 </select>
+                <span>선택함: {{ selected }}</span>
             </div>
         </v-card>
         <!-- Select Box Component -->
@@ -18,15 +19,32 @@
             <v-card-title class="headline font-weight-regular blue-grey white--text">ddori select box</v-card-title>
             <v-btn color="info"  v-on:click="ddoriGetSelectedData">getItem</v-btn>
             <div>
-                <d-select-box ref="cboBranch" :datas="datas" :selected-key="selected" :event-id="eventId" @onChange="changeBranch"></d-select-box>
+                <d-select-box ref="cboDoori" :datas="datas" :selected-key="selected" ></d-select-box>
             </div>
-        </v-card>        
+        </v-card>   
+
+        <!-- Select Box Component -->
+        <v-card>
+            <v-card-title class="headline font-weight-regular blue-grey white--text">express rest call</v-card-title>
+            <v-btn color="info"  v-on:click="ddoriGetSelectedData">getItem</v-btn>
+            <div>
+                <d-select-box ref="cboBranch" :datas="branchs" :selected-key="selBranchCode" :labelKeyName="'BRANCH_NAME'" :codeKeyName="'BRANCH_ID'" 
+                    :includeAll="includeAll"  @onChange="changeBranch">
+                </d-select-box>
+
+                <d-select-box ref="cboTeam" :datas="teams" :selected-key="selTeamCode" :labelKeyName="'TEAM_NAME'" 
+                    :includeAll="includeAll">
+                </d-select-box>
+            </div>
+        </v-card>  
+
     </div>
 </template>
 
 <script>
 
 import DSelectBox from '../components/core/DSelectBox.vue';
+import orgService from '../services/Org.js';
 export default {
     
     components:{
@@ -37,8 +55,20 @@ export default {
             datas:[{code:'01',name:'Test01'},{code:'02',name:'Test02'},{code:'03',name:'Test03'}
             ]
             ,selected:'02'
+            ,branchs:[]
+            ,teams:[]
+            ,includeAll:true
+            ,selBranchCode:'ALL'
+            ,selTeamCode:'ALL'
             //,eventId:'changedBranch'
         }   
+    }
+    ,mounted(){
+        let vi = this;
+        orgService.getBranchs("")
+            .then(function(response){
+                vi.branchs = response.data.result;
+            }); 
     }
     ,methods:{
         getSelectedData(){
@@ -53,11 +83,10 @@ export default {
         }
         ,ddoriGetSelectedData(){
         
-            let findItem = this.$refs.cboBranch.getSelectedData();
+            let findItem = this.$refs.cboDoori.getSelectedData();
             alert(findItem.name);
             //return findItem;
         }
-
         ,setSeletedItem(itemKey){
             this.selected = itemKey;
         }
@@ -65,7 +94,13 @@ export default {
             alert("chabged");
         }
         ,changeBranch(){
-            alert(this.$refs.cboBranch.getSelectedData().code);
+            let vi = this;
+            let branchId = this.$refs.cboBranch.getSelectedData().BRANCH_ID;
+            console.log("SELECT BRANCH CODE : " + branchId)
+            orgService.getTeams(branchId,"")
+            .then(function(response){
+                vi.teams = response.data.result;
+            }); 
         }
     },
 }
