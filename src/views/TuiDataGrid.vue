@@ -80,8 +80,16 @@ export default {
         
     },
     mounted() {
-        
-        
+       
+        let param = {loginId:'sunsee78',password:'2002ek78'};
+        this.$http.post('/api/user/login',param,{ headers:{'Content-type': 'application/json'}}).then(function(response) {	
+			alert(response.data.result);
+        })
+        .catch(function(e) {
+            alert('error');
+        });
+
+/*
         this.$http.get('/user/users',{
                     params: {
                     user_id: 'sunsee78'
@@ -94,7 +102,7 @@ export default {
                 console.log(error);
                 alert('실패');
             });
-    
+    */
     },
     methods:{
         classObject : function(item) {

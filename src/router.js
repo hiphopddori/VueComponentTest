@@ -16,6 +16,11 @@ export default new Router({
       component: Home
     },
     {
+      path: '/login',
+      name: 'Login',
+      component: () => import(/* webpackChunkName: "about" */ './views/Login.vue')
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
@@ -60,6 +65,11 @@ export default new Router({
       path: '/map',
       name: 'Kakao Map',
       component: () => import('./views/KakaoMapGuide.vue')
+    }
+    ,{
+      path: '/security',
+      name: 'Security Test',
+      component: () => import('./views/SecurityTest.vue')
     }
   ]
 })

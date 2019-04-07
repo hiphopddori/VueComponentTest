@@ -2,24 +2,47 @@
 
 module.exports = {
   devServer: {
+    
     proxy: { // proxyTable 설정
-      '/user': {
-        target: 'http://localhost:8080',
+      '/org': {
+        target: 'http://localhost:8090',
         changeOrigin: true,
         pathRewrite: {
            // '^/test': '/users'
         }
       }
       ,
-      '/org': {
-        target: 'http://localhost:8080',
+      '/api': {
+        target: 'http://localhost:8090',
         changeOrigin: true,
         pathRewrite: {
            // '^/test': '/users'
         }
-      }
+      }    
     }
   }
+  /*
+  ,
+    baseUrl: '',
+    outputDir: '../main/resources/',
+    assetsDir: '../main/assets/',
+    chainWebpack: config => {
+        config.module
+            .rule('vue')
+            .use('vue-loader')
+            .tap(options => {
+                return options
+            })
+        config.module
+            .rule('images')
+            .test(/\.(png|jpe?g|gif|ico)(\?.*)?$/)
+            .use('url-loader')
+            .loader('url-loader')
+            .options({
+                name: path.join('../main/assets/', 'img/[name].[ext]')
+            })
+    }
+    */
 }
 
 

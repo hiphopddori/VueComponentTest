@@ -70,6 +70,7 @@ export default {
                 { title: 'Firebase', icon: 'fa-database', path:'/firebase'  },
                 { title: 'Modal', icon: 'fa-window-restore', path:'/modal'  },
                 { title: 'Kakao Map', icon: 'fa-map-marker-alt', path:'/map'  },
+                { title: 'Security Test', icon: 'fa-lock-alt', path:'/security'  },
                 { title: 'About', icon: 'question_answer', path:'/'  }
             ],
             mini: true,
