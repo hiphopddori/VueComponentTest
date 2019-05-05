@@ -62,6 +62,16 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/ModalGuide.vue')
     },
     {
+      path: '/grid',
+      name: 'grid layout',
+      component: () => import(/* webpackChunkName: "about" */ './views/GridLayout.vue')
+    },
+    {
+      path: '/layer',
+      name: 'multi layout',
+      component: () => import(/* webpackChunkName: "about" */ './views/Layout/MultiModal.vue')
+    },
+    {
       path: '/map',
       name: 'Kakao Map',
       component: () => import('./views/KakaoMapGuide.vue')

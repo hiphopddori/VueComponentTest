@@ -10,7 +10,7 @@ export default {
     props:{
         mode:{
             type:String,
-            default:'H'
+            default:'H'     // V , H (V:vertical , H:Horison)
         }
         ,topGap:{
             type:Number,

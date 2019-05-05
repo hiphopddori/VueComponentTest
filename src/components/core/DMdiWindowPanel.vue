@@ -36,6 +36,8 @@ export default {
         maximized(){
             this.$parent.allHidden();
             this.heightSize =80;
+            this.left = 0;
+            this.widthSize = 80
             this.isMaximize = false;
             this.isRestore = true;
             this.display = '';

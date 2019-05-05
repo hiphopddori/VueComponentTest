@@ -27,7 +27,9 @@
     <v-content>
       <div>
         <v-fade-transition mode="out-in">
-          <router-view />
+          <keep-alive>
+            <router-view/>
+          </keep-alive>
         </v-fade-transition>
       </div>
     </v-content>

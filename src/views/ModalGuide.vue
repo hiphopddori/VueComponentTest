@@ -9,8 +9,8 @@
 
 
 <script>
-import popupModal1 from './popup/popupModal1.vue';
-
+//import popupModal1 from './popup/popupModal1.vue';
+const popupModal1 = () => import('./popup/popupModal1.vue');
 export default {
     data(){
         return{
