@@ -76,11 +76,14 @@ export default {
             });
             */
        }
-        ,maxMized(key){
-
-            this.layout.forEach(element => {
-                element.visible = false;
+       , layoutVisible(visible){
+           this.layout.forEach(element => {
+                element.visible = visible;
             });
+       }
+        ,maxMized(key){
+            
+            this.layoutVisible(false);
 
             this.layout[key].visible = true;
             this.layout[key].oY = this.layout[key].y;
@@ -98,9 +101,7 @@ export default {
             this.layout[key].y = this.layout[key].oY;
             this.layout[key].w = this.layout[key].oW;
 
-            this.layout.forEach(element => {
-                element.visible = true;
-            });
+            this.layoutVisible(true);
 
 
         }
