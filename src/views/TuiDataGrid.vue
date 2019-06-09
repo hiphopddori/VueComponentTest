@@ -69,6 +69,11 @@
 // tui grid method option
 // http://nhnent.github.io/tui.grid/api/Grid.html
 
+/* 
+추가 보완사항 : 최대화일경우는 리사이즈 막자
+리사이즈할경우 그리드 시스템으로 겹치는 부분 허용하지 않는 부분 고려 필요
+*/
+
 import 'tui-grid/dist/tui-grid.css';
 import { Grid } from '@toast-ui/vue-grid'
 
@@ -80,14 +85,6 @@ export default {
         
     },
     mounted() {
-       
-        let param = {loginId:'sunsee78',password:'2002ek78'};
-        this.$http.post('/api/user/login',param,{ headers:{'Content-type': 'application/json'}}).then(function(response) {	
-			alert(response.data.result);
-        })
-        .catch(function(e) {
-            alert('error');
-        });
 
 /*
         this.$http.get('/user/users',{

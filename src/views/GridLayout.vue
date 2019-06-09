@@ -13,8 +13,7 @@
             :responsive="false"
     >
         <v-card>
-            <v-btn color="info"  v-on:click="addMenu('add')">add menu</v-btn>
-            <v-btn color="info"  v-on:click="addMenu('maxmized')">최대화</v-btn>
+            <v-btn color="info"  v-on:click="addMenu('add')">화면 추가</v-btn>
         </v-card>
 
         <div v-show="item.visible" class="grid-item" v-for="item in layout">
@@ -32,9 +31,7 @@
                     <button class="lower" v-on:click="restored(item.i)"><v-icon>fa-window-restore</v-icon> </button>
                     <button class="raise" v-on:click="maxMized(item.i)"><v-icon>fa-window-maximize</v-icon></button>
                 </div>
-
-                <SelectBoxGuide>
-                </SelectBoxGuide>
+                <component :is=item.page></component>
             </grid-item>
         </div>
 
@@ -53,28 +50,21 @@ export default {
     
     data(){
         return{
-            allLayout:[
-                {"x":0,"y":0,"w":4,"h":20,"i":0,visible:true,oW:0,oY:0,oW:0},
-                {"x":4,"y":0,"w":4,"h":20,"i":1,visible:true,oX:0,oY:0,oW:0},
-            ],
-            layout:null
+            layout:[
+                {"page":"SelectBoxGuide","x":0,"y":0,"w":4,"h":20,"i":0,"visible":true,"oX":0,"oY":0,"oW":0},
+                {"page":"SelectBoxGuide","x":4,"y":0,"w":4,"h":20,"i":1,"visible":true,"oX":0,"oY":0,"oW":0},
+            ]
         }
     }
     ,mounted(){
-        this.layout = this.allLayout;
+       
     }
     ,methods: {
        addMenu(menuName){
             
-            this.layout[0].visible = false;
-            this.layout[1].x = 0;
-            this.layout[1].y = 0;
-            this.layout[1].w = 12;
-            /* 
-            this.$nextTick(() => {
-                this.layout = [this.allLayout[1]];
-            });
-            */
+            this.layoutVisible(false);
+            this.layout.push({"page":"TuiDataGrid","x":0,"y":0,"w":12,"h":20,"i":0,"visible":true,"oX":0,"oY":0,"oW":0});
+
        }
        , layoutVisible(visible){
            this.layout.forEach(element => {
