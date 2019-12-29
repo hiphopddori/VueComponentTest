@@ -2,7 +2,17 @@
     <div>
         <v-btn color="info"  v-on:click="popModal">custom modal</v-btn>
         <v-btn color="info"  v-on:click="changeMsg">changeMsg</v-btn>
-        <modals-container />
+        <div>
+            <div>1
+                <div>
+                    
+                </div>  
+            </div>
+            <div>2</div>
+            <div>3</div>
+            
+        </div>
+        
 
     </div>
 </template>
@@ -53,5 +63,19 @@ export default {
 </script>
 
 <style>
+.flex-container {
+  display: flex;
+  flex-direction:column;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
+}
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
 
 </style>

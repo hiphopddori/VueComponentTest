@@ -25,8 +25,17 @@ import BasicBarChart from "../components/charts/BasicBarChart"
 import DMdiWindowPanelContainer from "../components/core/DMdiWindowPanelContainer"
 import DMdiWindowPanel from "../components/core/DMdiWindowPanel"
 
+const funcTest = function(testParam){
+    console.log(testParam);
+    console.log(this);
+}
+
 export default {
     components: {DMdiWindowPanelContainer,DMdiWindowPanel,BasicBarChart }
+    ,mounted() {
+        funcTest.bind(this)("TEST");
+        
+    }
     ,methods:{
         
     }

@@ -9,7 +9,6 @@
             <v-spacer></v-spacer>
             <v-btn color="info" v-on:click="logout" v-show="isLogind=true">Logout</v-btn>
         </v-card>
-
     </div>
 
 </template>

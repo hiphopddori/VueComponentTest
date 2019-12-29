@@ -33,7 +33,7 @@
         </v-fade-transition>
       </div>
     </v-content>
-
+    <modals-container />
   </v-app>
 </template>
 
@@ -42,6 +42,8 @@ import HelloWorld from './components/HelloWorld'
 import SideMenu from './views/SideMenu'
 import Toolbar from './views/Toolbar'
 
+
+
 export default {
   name: 'App',
   components: {
@@ -49,9 +51,9 @@ export default {
     ,SideMenu
     ,Toolbar
   },
-  data () {
+  data() {
     return {
-      
+
     }
   }
 }

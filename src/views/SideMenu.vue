@@ -64,7 +64,9 @@ export default {
             drawer: true,
             items: [
                 { title: '종합감시', icon: 'fa-desktop' , path:'/monitor' },
+                { title: 'CompisitionTest', icon: 'fa-desktop' , path:'/composition' },
                 { title: 'Data Grid', icon: 'fa-table', path:'/datagrid'  },
+                { title: 'vue good table', icon: 'fa-lock-alt', path:'/vue-grid'},
                 { title: 'Select Box', icon: 'fa-caret-square-down', path:'/selectbox'  },
                 { title: 'Tab', icon: 'question_answer', path:'/tab'  },
                 { title: 'Firebase', icon: 'fa-database', path:'/firebase'  },
@@ -73,6 +75,7 @@ export default {
                 { title: 'Multi Layout', icon: 'fa-th', path:'/layer'  },
                 { title: 'Kakao Map', icon: 'fa-map-marker-alt', path:'/map'  },
                 { title: 'Security Test', icon: 'fa-lock-alt', path:'/security'  },
+                { title: 'Websocket Test', icon: 'fa-plug', path:'/websocket'  },
                 { title: 'About', icon: 'question_answer', path:'/'  }
             ],
             mini: true,

@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import VueCompositionApi from '@vue/composition-api'
 import './plugins/vuetify'
 import App from './App.vue'
 import router from './router'
@@ -12,6 +13,7 @@ import '@fortawesome/fontawesome-free/css/all.css'
 
 Vue.use(Vuefire)
 Vue.use(VModal,{dynamic:true})
+Vue.use(VueCompositionApi)
 
 
 

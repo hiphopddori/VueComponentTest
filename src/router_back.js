@@ -17,11 +17,6 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/TabsGuide.vue')
     },
     {
-      path: '/composition',
-      name: 'Composition',
-      component: () => import(/* webpackChunkName: "about" */ './views/CompositionTest.vue')
-    },
-    {
       path: '/login',
       name: 'Login',
       component: () => import(/* webpackChunkName: "about" */ './views/Login.vue')
