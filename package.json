@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build"
   },
+  
   "dependencies": {
     "@mathieustan/vue-datepicker": "^0.1.8-rc.5",
     "@toast-ui/vue-grid": "^1.0.3",
