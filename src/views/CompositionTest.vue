@@ -29,13 +29,18 @@ const axiosPromiseTest = ($http) =>{
     const getApi2=()=>{
          return new Promise((resolve,reject) =>{
               setTimeout(() => {
-                  resolve({story:{name:'ddori'}})
+                  resolve({data:{story:{name:'ddori'}}})
               }, 3000);
          });  
     }
     const getApi3=()=>{
         return $http.get('https://api.storyblok.com/v1/cdn/stories/health?version=published&token=wANpEQEsMYGOwLxwXQ76Ggtt').then((response)=>{
-             return response.data;
+             return response;
+        })
+    }
+    const getApi4=()=>{
+        return $http.get('https://api.storyblok.com/v1/cdn/datasources/?token=wANpEQEsMYGOwLxwXQ76Ggtt').then((response)=>{
+             return response;
         })
     }
     
@@ -44,19 +49,20 @@ const axiosPromiseTest = ($http) =>{
               console.log(`API1 : ${response.data.story.name}`);
               return getApi2();
          }).then(response=>{
-              console.log(`API2 : ${response.story.name}`);
+              console.log(`API2 : ${response.data.story.name}`);
               return getApi3();
          }).then(response=>{
-              console.log(`API3 : ${response.story.name}`);
+              console.log(`API3 : ${response.data.story.name}`);
+              return getApi4();
+         }).then(response=>{
+              console.log(`API4 : ${response.data.datasources[0].id}`);
          })
     }
 
     return{
         promiseTest
     }
-
 }
-
 
 export default {
   
