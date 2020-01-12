@@ -59,8 +59,22 @@ const axiosPromiseTest = ($http) =>{
          })
     }
 
+    const asyncAwaitTest= async ()=>{
+        let response = [];
+        response[0] = await getApi1();
+        console.log(`API1 : ${response[0].data.story.name}`);
+        response[1] = await getApi2();
+        console.log(`API2 : ${response[1].data.story.name}`);
+        response[2] = await getApi3();
+        console.log(`API3 : ${response[2].data.story.name}`);
+        response[3] = await getApi4();
+
+        console.log(`API4 : ${response[3].data.datasources[0].id}`);
+    }
+
     return{
-        promiseTest
+        promiseTest,
+        asyncAwaitTest
     }
 }
 
@@ -80,7 +94,7 @@ export default {
     const root = ref(null);
     const {count,double,increment} = increase()
     const object = reactive({ foo: 'bar' })
-    const {promiseTest} = axiosPromiseTest(context.root.$http)
+    const {promiseTest,asyncAwaitTest} = axiosPromiseTest(context.root.$http)
 
 
     onMounted(() => {
@@ -94,7 +108,8 @@ export default {
       object.foo = 'bar2';
 
       // axiosPromiseTest(context.root.$http).promiseTest();  //namespace add
-      promiseTest()
+      //promiseTest()
+      asyncAwaitTest();
 
     })
 
