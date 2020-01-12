@@ -20,6 +20,44 @@ const increase = ()=> {
     }
     return {count,double,increment}; 
 }
+
+const axiosPromiseTest = ($http) =>{
+
+    const getApi1=()=>{
+        return $http.get('https://api.storyblok.com/v1/cdn/stories/vue?version=published&token=wANpEQEsMYGOwLxwXQ76Ggtt');
+    }
+    const getApi2=()=>{
+         return new Promise((resolve,reject) =>{
+              setTimeout(() => {
+                  resolve({story:{name:'ddori'}})
+              }, 3000);
+         });  
+    }
+    const getApi3=()=>{
+        return $http.get('https://api.storyblok.com/v1/cdn/stories/health?version=published&token=wANpEQEsMYGOwLxwXQ76Ggtt').then((response)=>{
+             return response.data;
+        })
+    }
+    
+    const promiseTest=()=>{
+         getApi1().then(response=>{
+              console.log(`API1 : ${response.data.story.name}`);
+              return getApi2();
+         }).then(response=>{
+              console.log(`API2 : ${response.story.name}`);
+              return getApi3();
+         }).then(response=>{
+              console.log(`API3 : ${response.story.name}`);
+         })
+    }
+
+    return{
+        promiseTest
+    }
+
+}
+
+
 export default {
   
   data(){
@@ -31,11 +69,12 @@ export default {
     debugger
     // inspect which dependency is causing the component to re-render
   }
-  ,setup() {
+  ,setup(props,context) {
     
     const root = ref(null);
     const {count,double,increment} = increase()
     const object = reactive({ foo: 'bar' })
+    const {promiseTest} = axiosPromiseTest(context.root.$http)
 
 
     onMounted(() => {
@@ -47,6 +86,10 @@ export default {
       increment();
       count.value++;
       object.foo = 'bar2';
+
+      // axiosPromiseTest(context.root.$http).promiseTest();  //namespace add
+      promiseTest()
+
     })
 
     onUpdated(() => {
