@@ -34,9 +34,14 @@ const axiosPromiseTest = ($http) =>{
          });  
     }
     const getApi3=()=>{
+        /*
         return $http.get('https://api.storyblok.com/v1/cdn/stories/health?version=published&token=wANpEQEsMYGOwLxwXQ76Ggtt').then((response)=>{
              return response;
         })
+        */
+       setTimeout(() => {
+            return {data:{story:{name:'ddori3'}}}
+        }, 3000);
     }
     const getApi4=()=>{
         return $http.get('https://api.storyblok.com/v1/cdn/datasources/?token=wANpEQEsMYGOwLxwXQ76Ggtt').then((response)=>{
@@ -108,8 +113,8 @@ export default {
       object.foo = 'bar2';
 
       // axiosPromiseTest(context.root.$http).promiseTest();  //namespace add
-      //promiseTest()
-      asyncAwaitTest();
+      promiseTest()
+      //asyncAwaitTest();
 
     })
 

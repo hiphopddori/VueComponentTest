@@ -32,7 +32,8 @@ export default {
                     level: 3 //지도의 레벨(확대, 축소 정도)
                 };
                 this.map = new daum.maps.Map(this.$refs.map, options); 
-                this.drawMaker();
+                //this.drawMaker();
+                this.drawCircle();
                 this.drawCustomOveray();
 
             });
@@ -52,8 +53,22 @@ export default {
 
             // 마커가 지도 위에 표시되도록 설정합니다
             marker.setMap(this.map);
-        }
-        ,drawCustomOveray(){
+        },
+        drawCircle(){
+            const circle = new kakao.maps.Circle({
+                //map: map,
+                center : new kakao.maps.LatLng(33.450701, 126.570667),
+                radius: 50,
+                strokeWeight: 2,
+                strokeColor: '#FF00FF',
+                strokeOpacity: 0.8,
+                strokeStyle: 'dashed',
+                fillColor: '#00EEEE',
+                fillOpacity: 0.5 
+            });      
+            circle.setMap(this.map);  
+        },
+        drawCustomOveray(){
             
             // const eventTest = function(){
             //     alert('Test 입니다.');
