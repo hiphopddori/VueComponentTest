@@ -12,7 +12,7 @@ import loadScriptOnce from 'load-script-once';
 export default {
     data(){
         return{
-            apiKey:'4ed139e6903b4acaeab4880ad1cde904'
+            apiKey:'your API KEY'
             ,libraries:['services','clusterer','drawing']
             ,map:null
         }
