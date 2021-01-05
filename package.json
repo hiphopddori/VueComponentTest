@@ -10,7 +10,7 @@
     "@mathieustan/vue-datepicker": "^0.1.8-rc.5",
     "@toast-ui/vue-grid": "^1.0.3",
     "@vue/composition-api": "^0.3.4",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "chart.js": "^2.7.3",
     "firebase": "^5.6.0",
     "load-script-once": "^2.0.0",
