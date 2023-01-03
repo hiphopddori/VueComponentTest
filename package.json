@@ -32,7 +32,7 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.7.1",
     "@vue/cli-plugin-babel": "^3.2.0",
-    "@vue/cli-service": "^3.2.0",
+    "@vue/cli-service": "^5.0.8",
     "jest": "^24.9.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
